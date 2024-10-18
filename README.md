@@ -1,4 +1,4 @@
-# CSC450-P1 - Code For Good - STORM Center for Hope and Service
+# Code For Good - STORM Center for Hope and Service
 
 ️**Author(s)**: Melissa, Hafsa, Sachi, Destiny, Raul, Krithi, Mostaphe, 
 
