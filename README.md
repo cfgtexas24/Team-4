@@ -1,6 +1,6 @@
 # Code For Good - STORM Center for Hope and Service
 
-️**Author(s)**: Melissa, Hafsa, Sachi, Destiny, Raul, Krithi, Mostaphe, 
+️**Author(s)**: Melissa, Hafsa, Sachi, Destiny, Raul, Krithi, Mostaphe
 
 ️**Project Description**
 
