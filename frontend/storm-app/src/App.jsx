@@ -6,7 +6,6 @@ import DashboardPage from './pages/DashboardPage/DashboardPage';
 import CommunityPage from './pages/CommunitiesPage/CommunityPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 import './App.css'
 
 function App() {

@@ -1,6 +1,6 @@
 # Code For Good - STORM Center for Hope and Service
 
-️**Author(s)**: Melissa, Hafsa, Sachi, Destiny, Raul, Krithi, Mostaphe
+️**Author(s)**: Melissa, Hafsa, Sachi, Krithika, Destiny, Raul, Mostaphe
 
 ️**Project Description**
 
@@ -10,6 +10,7 @@ In this project, we aim to build a great resource for youth in difficult transit
 
 1. Mostaphe Mohamud - mohamudm@berea.edu
 2. Rinat R. Nailev - nailevr@berea.edu
+3. Krithika Subramanian - krithi.subra@gmail.com
 
 ## Acknowledgments
 
