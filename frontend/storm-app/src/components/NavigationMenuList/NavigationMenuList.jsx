@@ -13,6 +13,11 @@ function NavigationMenuList({isOpen, setIsOpen, isSignedIn}) {
         setIsOpen(false);
     }
 
+    const handleDashboardClick = () => {
+        navigate('/dashboard');
+        setIsOpen(false);
+    }
+
     const handleSignInClick = () => {
         setShowSignIn(true);
     };
@@ -37,6 +42,7 @@ function NavigationMenuList({isOpen, setIsOpen, isSignedIn}) {
                 <li className="nav-item">Resources</li>
                 {isSignedIn
                     ? <>
+                        <li className="nav-item" onClick={handleDashboardClick}>Dashboard</li>
                         <li className="nav-item" onClick={handleMentorChatClick}>Mentor Chat</li>
                         <li className="nav-item" onClick={handleCommunitiesClick}>Communities</li>
                         <li className="nav-item">Courses</li>
