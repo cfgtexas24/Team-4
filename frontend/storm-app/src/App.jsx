@@ -12,6 +12,7 @@ import MapPage from './pages/MapPage/MapPage';
 
 import './App.css';
 import LandingPage from './pages/LandingPage/LandingPage';
+import CoursesPage from './pages/FinanceCoursesPage/CoursesPage';
 
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -26,6 +27,7 @@ function App() {
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/chat" element={<ChatPage />} />
+          <Route path="/courses" element={<CoursesPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/map" element={<MapPage />} />
         </Routes>
