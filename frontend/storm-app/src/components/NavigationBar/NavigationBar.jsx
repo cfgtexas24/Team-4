@@ -4,12 +4,19 @@ import Logo from "../../assets/logo.webp"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './NavigationBar.css'
 import { useState } from 'react'
+import SignUpForm from '../SignUpForm/SignUpForm'
 
 function NavigationBar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [showSignIn, setShowSignIn] = useState(false);
+
 
     const handleMenuToggle = () => {
         setIsOpen(!isOpen);
+    };
+
+    const handleSignInClick = () => {
+        setShowSignIn(true);
     };
 
     return(
@@ -29,9 +36,10 @@ function NavigationBar() {
                 <ul className={`menuList ${isOpen ? 'visible' : ''}`}>
                     <li className="nav-item">Home</li>
                     <li className="nav-item">Resources</li>
-                    <li className="nav-item">Sign In</li>
+                    <li className="nav-item" onClick={handleSignInClick}>Sign In</li>
                 </ul>
             <div/>
+            {showSignIn && <SignUpForm />}
         </div>
         
     )
