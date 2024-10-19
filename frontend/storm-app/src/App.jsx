@@ -7,6 +7,8 @@ import CommunityPage from './pages/CommunitiesPage/CommunityPage';
 import ChatPage from './pages/ChatPage/ChatPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavigationBar from './components/NavigationBar/NavigationBar';
+import MapPage from './pages/MapPage/MapPage';
+
 
 import './App.css';
 import LandingPage from './pages/LandingPage/LandingPage';
@@ -25,6 +27,7 @@ function App() {
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/chat" element={<ChatPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/map" element={<MapPage />} />
         </Routes>
       </Router>       
     </>
