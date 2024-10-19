@@ -1,7 +1,7 @@
 import React from 'react'
 import { Squash as Hamburger } from 'hamburger-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import Logo from "../../assets/logo.webp"
 
 function NavigationBar() {
     return(
@@ -10,7 +10,7 @@ function NavigationBar() {
                 <FontAwesomeIcon icon="fa-solid fa-user" />
             </div>
             <div className='navBarLogo'>
-                <image src='../../assets/logo.webp' alt='Storm Logo'/>
+                <img src={Logo} alt='Storm Logo'/>
             </div>
             <div className='navBarMenu'>
                 <Hamburger />
