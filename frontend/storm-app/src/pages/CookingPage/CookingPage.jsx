@@ -1,39 +1,46 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, ListGroup } from 'react-bootstrap';
-import './GroupChat.css'; // Create a CSS file for custom styles
+import './GroupChat.css'; // Ensure your CSS is imported
 
-const GroupChat = () => {
+const CookingPage = () => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
 
   const handleSend = () => {
     if (message.trim()) {
-      // Hardcoded responses based on user input
-      const response = generateResponse(message);
+      // Add user message immediately
       setMessages((prevMessages) => [
         ...prevMessages,
         { text: message, sender: 'User' },
-        { text: response, sender: 'Bot' },
       ]);
+
+      // Clear the input field
       setMessage('');
+
+      // Generate a response and set it to appear after 2 seconds
+      setTimeout(() => {
+        const response = generateResponse(message);
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { text: response, sender: 'anon_xxx' },
+        ]);
+      }, 1000); // 2000 milliseconds = 2 seconds
     }
   };
 
   const generateResponse = (input) => {
-    // Example hardcoded responses
     const responses = {
-      hello: "Hi there! How can I help you?",
-      howAreYou: "I'm just a bot, but I'm doing great!",
+      "hello": "Hey, how are you doing?",
+      "how are you": "I'm doing great!",
       // Add more responses as needed
     };
-
-    const lowerInput = input.toLowerCase();
-    return responses[lowerInput] || "I don't understand that.";
+    // Return a default response if no match found
+    return responses[input.toLowerCase()] || "Cool!!";
   };
 
   return (
     <Container fluid className="group-chat-container">
-      <Row>
+      <Row className="flex-grow-1"> {/* Ensures Row takes full height */}
         <Col md={3} className="sidebar">
           <h4>Channels</h4>
           <ListGroup>
@@ -44,17 +51,15 @@ const GroupChat = () => {
         </Col>
         <Col md={9} className="chat-area">
           <h4>Group Chat</h4>
-            <div className="chat-window">
-              {messages.map((msg, index) => (
-                <div key={index} className={`message ${msg.sender.toLowerCase()}`}>
-                  <div className={msg.sender.toLowerCase() === 'user' ? 'user-message' : 'bot-message'}>
-                    <strong>{msg.sender}:</strong> {msg.text}
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="chat-window">
+            {messages.map((msg, index) => (
+              <div key={index} className={`message ${msg.sender.toLowerCase()}`}>
+                <strong>{msg.sender}:</strong> {msg.text}
+              </div>
+            ))}
+          </div>
           <Form className="input-form">
-            <Form.Group controlId="messageInput">
+            <Form.Group controlId="messageInput" className="mb-0">
               <Form.Control
                 type="text"
                 placeholder="Type a message..."
@@ -70,4 +75,4 @@ const GroupChat = () => {
   );
 };
 
-export default GroupChat;
+export default CookingPage;
