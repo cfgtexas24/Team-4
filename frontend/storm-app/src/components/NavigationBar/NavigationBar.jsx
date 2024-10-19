@@ -8,9 +8,7 @@ import SignUpForm from '../SignUpForm/SignUpForm'
 import NavigationMenuList from '../NavigationMenuList/NavigationMenuList'
 
 function NavigationBar() {
-    // to change
-    const isSignedIn = true;
-
+    const [isSignedIn, setIsSignedIn] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
     const handleMenuToggle = () => {
@@ -42,7 +40,7 @@ function NavigationBar() {
                 </div>
             </div>
             <div className={`menuBackground ${isOpen ? 'expanded' : ''}`}/>
-                <NavigationMenuList isOpen={isOpen} setIsOpen={setIsOpen} isSignedIn={isSignedIn} />
+                <NavigationMenuList isOpen={isOpen} setIsOpen={setIsOpen} isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />
             <div/>
         </div>
         
