@@ -3,10 +3,8 @@ import uuid
 from flask import Flask, render_template, redirect, url_for, request, jsonify
 from flask_uuid import FlaskUUID
 from firebase import db
-<<<<<<< HEAD
 from services.emergency_service import emergency_service
-=======
->>>>>>> afc3941a2344740c8409ad484cf09d255c8dc799
+from flask_cors import CORS
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -43,8 +41,7 @@ def sign_in():
 @app.route('/sign-up', methods=['GET', 'POST'])
 def sign_up():
     if request.method == 'POST':
-        data = request.json
-    
+        data = request.jso
         # Extract user information
         user_id = str(uuid.uuid4())
         name = data.get('name')
