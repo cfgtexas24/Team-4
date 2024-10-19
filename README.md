@@ -1,5 +1,9 @@
 # Code For Good - STORM Center for Hope and Service
 
+<<<<<<< HEAD
+=======
+️**Author(s)**: Melissa, Hafsa, Sachi, Destiny, Raul, Krithi, Mostaphe
+>>>>>>> course-page-example
 ️**Author(s)**: Melissa, Hafsa, Sachi, Krithika, Destiny, Raul, Mostaphe
 
 ️**Project Description**
@@ -10,8 +14,11 @@ The STORM Center for Hope and Service app is a resource hub designed to support 
 
 1. Mostaphe Mohamud - mohamudm@berea.edu
 2. Rinat R. Nailev - nailevr@berea.edu
+<<<<<<< HEAD
 3. Krithika Subramanian - krithi.subra@gmail.com
 4. Hafsa Alaparmak - hafsaasude2@gmail.com
+=======
+>>>>>>> course-page-example
 
 ## Acknowledgments
 
@@ -27,3 +34,4 @@ Git: Version control for collaboration and code management.
 
 We utilized the following sources:
 1. 
+
