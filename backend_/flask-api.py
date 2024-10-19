@@ -9,8 +9,8 @@ app = Flask(__name__)
 FlaskUUID(app)
 CORS(app)
 # name, location, gender, age, phone, email, housing request
-
 # Landing Page (Redirects to /home)
+
 @app.route('/')
 def landing():
     return redirect(url_for('home'))
@@ -39,7 +39,6 @@ def sign_in():
 def sign_up():
     if request.method == 'POST':
         data = request.json
-    
         # Extract user information
         user_id = str(uuid.uuid4())
         name = data.get('name')
@@ -49,7 +48,6 @@ def sign_up():
         phone = data.get('phone')
         email = data.get('email')
         housing_request = data.get('housing_request')
-            
         # Save to Firestore
         db.collection('users').document(user_id).set({
             'uuid': user_id,
@@ -62,13 +60,10 @@ def sign_up():
             'housing_request': housing_request,
             'points': "0"
         })
-
         # return redirect(url_for('dashboard'))
         return "redirected"
-    
     # return render_template('sign_up.html')
     return "did not redirect"
-    
 
 # Mentor Page
 @app.route('/mentor')
@@ -79,7 +74,6 @@ def mentor():
 @app.route('/community')
 def community():
     return render_template('community.html')
-
 @app.route('/community/programming-community')
 def programming_community():
     return render_template('programming_community.html')
@@ -87,16 +81,16 @@ def programming_community():
 # Courses Page
 @app.route('/courses')
 def courses():
-    return render_template('courses.html') 
+    return render_template('courses.html')
 
 @app.route('/courses/finance')
 def finance_course():
-    return render_template('finance_course.html') 
+    return render_template('finance_course.html')
 
 # Dashboard Page
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
-
+    return "dashboard"
+    #return render_template('dashboard.html')
 if __name__ == '__main__':
     app.run(debug=True)
