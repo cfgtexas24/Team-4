@@ -1,55 +1,73 @@
 import { useState } from 'react';
-import './EmergencyButton.css';  
+import './EmergencyButton.css';
 
 const EmergencyButton = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);   // Modal visibility state
-  const [alertSent, setAlertSent] = useState(false);       // State to track if the message has been sent
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [alertSent, setAlertSent] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  // Function to handle opening the modal
   const handleButtonClick = () => {
     setIsModalOpen(true);
-    setAlertSent(false);  // Reset the alertSent state when button is clicked again
+    setAlertSent(false);
+    setError(null);
   };
 
-  // Function to handle confirmation (Yes)
-  const handleConfirm = () => {
-    setIsModalOpen(false);  // Close the modal
-    setAlertSent(true);      // Set alertSent to true to display confirmation message
+  const handleConfirm = async () => {
+    setIsModalOpen(false);
+    setIsLoading(true);
+    setError(null);
 
-    // Logic to send an alert (to admin, etc.)
-    console.log('Admin has been alerted about the emergency.');
-    // API call or Firebase message ? 
+    try {
+      const response = await fetch('/api/send-emergency-alert', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: 'Emergency alert: A user has reported being homeless and needs assistance.' }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send alert');
+      }
+
+      setAlertSent(true);
+    } catch (err) {
+      setError('Failed to send emergency alert. Please try again.');
+      console.error('Error sending alert:', err);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  // Function to handle cancel (No)
   const handleCancel = () => {
-    setIsModalOpen(false);   // Close the modal without sending the alert
+    setIsModalOpen(false);
   };
 
   return (
     <div>
-      <button onClick={handleButtonClick} className="emergency-button">
+      <button onClick={handleButtonClick} className="emergency-button" disabled={isLoading}>
         Emergency Alert
       </button>
-
-      {/* Modal content */}
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal">
             <div className="modal-content">
               <h2>Confirm Emergency</h2>
               <p>Are you homeless? Do you want to send an alert to the admin?</p>
-              <button onClick={handleConfirm} className="confirm-button">Yes, send alert</button>
-              <button onClick={handleCancel} className="cancel-button">No, cancel</button>
+              <button onClick={handleConfirm} className="confirm-button" disabled={isLoading}>
+                Yes, send alert
+              </button>
+              <button onClick={handleCancel} className="cancel-button" disabled={isLoading}>
+                No, cancel
+              </button>
             </div>
           </div>
         </div>
       )}
-
-      {/* Display confirmation message after the alert is sent */}
-      {alertSent && (
-        <p className="alert-message">Your emergency alert has been sent to the admin.</p>
-      )}
+      {isLoading && <p>Sending alert...</p>}
+      {alertSent && <p className="alert-message">Your emergency alert has been sent to the admin.</p>}
+      {error && <p className="error-message">{error}</p>}
     </div>
   );
 };
