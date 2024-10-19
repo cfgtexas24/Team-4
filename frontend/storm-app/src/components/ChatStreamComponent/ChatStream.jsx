@@ -11,12 +11,13 @@ function ChatStream() {
             className='message-list'
             lockable={true}
             toBottomHeight={'100%'}
-            dataSource={messages.map((message) => {
-                {position = message[0] === "You" ? "right" : "left",
-                type = "text",
-                title = message[0],
-                text = message[1]}
-            }
+            dataSource={messages.map((message) => (
+                {position: message[0] === "You" ? "right" : "left",
+                type: "text",
+                title: message[0],
+                text: message[1]
+                }
+                )
             )}
         />
     )

@@ -1,0 +1,12 @@
+.chatPage {
+    background-color: #f7f7f7;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 5px solid #89e219;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
