@@ -1,0 +1,20 @@
+{
+  "name": "team-4",
+  "version": "1.0.0",
+  "description": "<<<<<<< HEAD\r ️**Author(s)**: Melissa, Hafsa, Sachi, Destiny, Raul, Krithi, Mostaphe\r =======\r ️**Author(s)**: Melissa, Hafsa, Sachi, Krithika, Destiny, Raul, Mostaphe\r >>>>>>> backend-api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfgtexas24/Team-4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cfgtexas24/Team-4/issues"
+  },
+  "homepage": "https://github.com/cfgtexas24/Team-4#readme"
+}

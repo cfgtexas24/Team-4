@@ -10,13 +10,13 @@ In this project, we aim to build a great resource for youth in difficult transit
 
 1. Mostaphe Mohamud - mohamudm@berea.edu
 2. Rinat R. Nailev - nailevr@berea.edu
-3. Krithika Subramanian - krithi.subra@gmail.com
 
 ## Acknowledgments
 
-Thanks to our mentors Xavier and the entire Chase team. 
+Thanks to our mentors Xavier and Siva and the entire Chase team. 
 
 ## References
 
 We utilized the following sources:
 1. 
+
