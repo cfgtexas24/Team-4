@@ -23,8 +23,8 @@ function ChatPage() {
     }
 
     return(
-        <div className='chatPage h-75 d-flex justify-content-end'>
-            <ChatStream messages={messages} />
+        <div className='chatPage w-100 d-flex justify-content-end h-75'>
+            <ChatStream messages={messages} setMessages={setMessages} />
             <ChatInput onSendMessage={handleSendMessage} />
         </div>
     )
