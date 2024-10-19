@@ -12,7 +12,6 @@ function App() {
   return (
     <>
       <NavigationBar />
-      <p>App</p>       
       <Router>
         <Routes>
           <Route path="/" element={<DashboardPage />} />
