@@ -4,8 +4,10 @@ from flask import Flask, render_template, redirect, url_for, request, jsonify
 from flask_uuid import FlaskUUID
 from firebase import db
 from services.emergency_service import emergency_service
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app) # enabling CORS for routes, needed for emergency alert
 FlaskUUID(app)
 # name, location, gender, age, phone, email, housing request
 
