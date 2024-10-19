@@ -13,9 +13,10 @@ function NavigationMenuList({isOpen, setIsOpen, isSignedIn, setIsSignedIn}) {
     }
 
     const handleResourcesClick = () => {
-        window.location.href = 'https://www.stormcohs.org/resources';
+        window.open('https://www.stormcohs.org/resources', '_blank');
         setIsOpen(false);
-    }
+    };
+
     
     const handleDashboardClick = () => {
         navigate('/dashboard');
@@ -50,19 +51,26 @@ function NavigationMenuList({isOpen, setIsOpen, isSignedIn, setIsSignedIn}) {
         setIsOpen(false);
     };
 
+    const handleConnectWithCommunitiesClick = () => {
+        navigate('/map');
+        setIsOpen(false);
+    };
+
 
     return(
         <>
             <ul className={`menuList ${isOpen ? 'visible' : ''}`}>
                 <li className="nav-item" onClick={handleLandingPageClick}>Home</li>
-                <li className="nav-item" onClick={handleResourcesClick}>Resources</li>
+                <li className="nav-item" onClick={handleResourcesClick}>STORM</li>
                 {isSignedIn
                     ? <>
                         <li className="nav-item" onClick={handleDashboardClick}>Dashboard</li>
                         <li className="nav-item" onClick={handleMentorChatClick}>Mentor Chat</li>
                         <li className="nav-item" onClick={handleCommunitiesClick}>Communities</li>
                         <li className="nav-item" onClick={handleCoursesClick}>Courses</li>
+                        <li className="nav-item" onClick={handleConnectWithCommunitiesClick}>Connect with Communities</li> 
                         <li className="nav-item" onClick={handleSignOutClick}>Sign Out</li>
+
                     </>
                     : <li className="nav-item" onClick={handleSignInClick}>Sign In</li>
                 }

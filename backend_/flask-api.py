@@ -160,9 +160,6 @@ def sign_up():
         email = data.get('email')
         housing_request = data.get('housing_request')
             
-        # Create a unique user ID (e.g., using the email as a document ID or generate a UUID)
-        user_id = email
-            
         # Save to Firestore
         db.collection('users').document(user_id).set({
             'uuid': user_id,

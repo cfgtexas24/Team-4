@@ -1,20 +1,25 @@
+* {
+    background-color: none;
+}
 
 .module-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
+    z-index: 1;
 
-.path {
+}.path {
     height: 200%;
     margin: auto;
-    z-index: -1;
     margin: 0% 50%;
     position: absolute;
-}
-
-.class-header {
+}.path-header {
+    display:flex;
+    justify-content: center;
+    background-color: white;
+    z-index: 1;
+}.class-header {
     width: 100%;
     background-color: deepskyblue;
 }

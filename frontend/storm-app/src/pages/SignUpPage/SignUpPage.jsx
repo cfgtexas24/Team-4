@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "./SignUpPage.css";
 import Logo from "../../assets/logo.webp"
 import fun from "../../assets/image.png"
-
-
 
 const FIRST_NAME = "firstName";
 const LAST_NAME = "lastName";
@@ -33,6 +32,8 @@ function SignUpPage() {
     [WANT_MENTOR]: false,
     [VERIFICATION_CODE]: "",
   });
+
+  const navigate = useNavigate(); // Initialize the hook
 
   function changeInput(event) {
     const { id, type, checked, value } = event.target;
@@ -67,6 +68,9 @@ function SignUpPage() {
         headers: { 'Content-Type': 'application/json' },
       });
       console.log("Sign up successful:", response.data);
+      
+      // Redirect to /sign-in after successful sign-up
+      navigate("/sign-in");
     } catch (error) {
       console.error("Error during sign up:", error.response ? error.response.data : error.message);
     }
@@ -229,4 +233,3 @@ function SignUpPage() {
 }
 
 export default SignUpPage;
-

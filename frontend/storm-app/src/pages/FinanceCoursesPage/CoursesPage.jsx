@@ -1,9 +1,5 @@
 import ModuleComponent from "../../components/ModuleComponent/ModuleComponent";
-import Path from "../../assets/path.png";
-
-import "./CoursesPage.css";
-
-// Same data used for finance application
+import Path from "../../assets/path.png";import "./CoursesPage.css";// Same data used for finance application
 const FINANCE_APP = {
   courseName: "Finances",
   modules: [
@@ -22,30 +18,28 @@ const FINANCE_APP = {
     {
       name: "Saving for Big Goals",
       description:
-        "Get to know how you can start saving up for big goals and your future",
+        "Get to know how you can start saving up for big goals and your future.",
+      status: "todo",
+    },
+    {
+      name: "Generational Wealth",
+      description:
+        "Building wealth for generations to come--how you can do it and why it matters.",
       status: "todo",
     },
   ],
-};
-
-function CoursesPage() {
+};function CoursesPage() {
   /***
    * Renders an individual module of a course
    */
   function renderModule(moduleInfo) {
     return <ModuleComponent moduleInfo={moduleInfo} />;
-  }
-
-  const courseName = FINANCE_APP.courseName;
-  const modules = FINANCE_APP.modules;
-
-  return (
+  }  const courseName = FINANCE_APP.courseName;
+  const modules = FINANCE_APP.modules;  return (
     <>
       <img className="path" src={Path} />
       <h1 className="path-header">{courseName}</h1>
       <div className="module-container">{modules.map(renderModule)}</div>
     </>
   );
-}
-
-export default CoursesPage;
+}export default CoursesPage;
