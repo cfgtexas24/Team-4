@@ -3,9 +3,11 @@ import uuid
 from flask import Flask, render_template, redirect, url_for, request
 from flask_uuid import FlaskUUID
 from firebase import db
+from flask_cors import CORS
 
 app = Flask(__name__)
 FlaskUUID(app)
+CORS(app)
 # name, location, gender, age, phone, email, housing request
 
 # Landing Page (Redirects to /home)
@@ -46,9 +48,6 @@ def sign_up():
         phone = data.get('phone')
         email = data.get('email')
         housing_request = data.get('housing_request')
-            
-        # Create a unique user ID (e.g., using the email as a document ID or generate a UUID)
-        user_id = email
             
         # Save to Firestore
         db.collection('users').document(user_id).set({
