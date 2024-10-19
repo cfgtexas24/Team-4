@@ -9,6 +9,7 @@ import CookingPage from './pages/CookingPage/CookingPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 import './App.css';
+import LandingPage from './pages/LandingPage/LandingPage';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <NavigationBar />
       <div className="main-content">
         <Routes>
-          <Route path="/" element={<DashboardPage />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/sign-in" element={<SignInPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/community" element={<CommunityPage />} />

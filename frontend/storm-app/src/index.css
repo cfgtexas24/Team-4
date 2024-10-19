@@ -1,7 +1,21 @@
 .custom-bg-color {
-    background-color: #74eb34; /* Replace with your desired color */
+    background-color: #ffc715; /* Replace with your desired color */
 }
 
 .shelf-color{
     background-color: #533838;
+}
+
+.responsive-img {
+    width: 100%;      /* Makes the image take up the full width of its container */
+    max-width: 100%;  /* Ensures the image does not scale beyond its original size */
+    height: auto;     /* Maintains the aspect ratio of the image */
+}
+
+.landing-bg{
+    background-color: #bdb82a;
+}
+
+.dash-bg{
+    background-color: #faa918;
 }
