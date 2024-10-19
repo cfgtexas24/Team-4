@@ -7,6 +7,7 @@ import CommunityPage from './pages/CommunitiesPage/CommunityPage';
 import ChatPage from './pages/ChatPage/ChatPage';
 import CookingPage from './pages/CookingPage/CookingPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CoursesPage from './pages/FinanceCoursesPage/CoursesPage';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 import './App.css';
 import LandingPage from './pages/LandingPage/LandingPage';
@@ -21,9 +22,10 @@ function App() {
           <Route path="/sign-in" element={<SignInPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/community" element={<CommunityPage />} />
-          <Route path="/community/cooking" element={<CookingPage />} />
+          <Route path="/community/cooking-community" element={<CookingPage />} />
           <Route path="/chat" element={<ChatPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/courses" element={<CoursesPage />} />
         </Routes>
       </div>
     </Router>

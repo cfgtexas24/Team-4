@@ -17,7 +17,7 @@ const FINANCE_APP = {
       name: "Fundamentals of Budgeting",
       description:
         "Learn how budgeting each month can put you ahead of the game and set you up to better achieve your financial goals.",
-      status: "done",
+      status: "todo",
     },
     {
       name: "Saving for Big Goals",

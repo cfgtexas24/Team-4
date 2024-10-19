@@ -7,8 +7,11 @@ import volunteeringImage from '../../assets/volunteer.png';
 import artImage from '../../assets/images.png'; 
 import careerImage from '../../assets/career.png'; 
 import healthImage from '../../assets/health.png'; 
+import { useNavigate } from 'react-router-dom';
 
 function CommunityPage() {
+  const navigate = useNavigate(); // Hook to programmatically navigate
+
   // Duolingo color palette for design consistency
   const duolingoColors = {
     pistachio: '#7ac70c',
@@ -30,6 +33,11 @@ function CommunityPage() {
     { name: 'Health & Wellness Community', image: healthImage, color: duolingoColors.dodgerBlue, description: 'Discuss health tips, wellness practices, and stay fit together!' },
     { name: 'Career Community', image: careerImage, color: duolingoColors.studio, description: 'Share career advice, job opportunities, and professional growth tips!' },
   ];
+
+  const handleEnterCommunity = (communityName) => {
+    const formattedName = communityName.toLowerCase().replace(/ /g, '-');
+    navigate(`/community/${formattedName}`);
+  };
 
   return (
     <Container className="mt-5">
@@ -69,6 +77,7 @@ function CommunityPage() {
                     padding: '10px 20px' 
                   }} 
                   className="mt-auto"
+                  onClick={() => handleEnterCommunity(community.name)}
                 >
                   Enter Community
                 </Button>

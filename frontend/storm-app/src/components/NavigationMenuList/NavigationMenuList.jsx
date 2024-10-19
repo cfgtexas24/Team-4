@@ -22,6 +22,16 @@ function NavigationMenuList({isOpen, setIsOpen, isSignedIn}) {
         setIsOpen(false)
     }
 
+    const handleSignOutClick = () => {
+        navigate('/sign-in');
+        setIsOpen(false)
+    }
+
+    const handleCoursesClick = () => {
+        navigate('/courses');
+        setIsOpen(false)
+    }
+
 
     return(
         <>
@@ -32,8 +42,8 @@ function NavigationMenuList({isOpen, setIsOpen, isSignedIn}) {
                     ? <>
                         <li className="nav-item" onClick={handleMentorChatClick}>Mentor Chat</li>
                         <li className="nav-item" onClick={handleCommunitiesClick}>Communities</li>
-                        <li className="nav-item">Courses</li>
-                        <li className="nav-item">Sign Out</li>
+                        <li className="nav-item" onClick={handleCoursesClick}>Courses</li>
+                        <li className="nav-item" onClick={handleSignOutClick}>Sign Out</li>
                     </>
                     : <li className="nav-item" onClick={handleSignInClick}>Sign In</li>
                 }

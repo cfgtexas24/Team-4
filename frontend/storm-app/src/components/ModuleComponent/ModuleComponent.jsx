@@ -8,14 +8,23 @@ function ModuleComponent(moduleInfo) {
   const moduleDescription = moduleInfo.moduleInfo.description;
   const moduleStatus = moduleInfo.moduleInfo.status;
 
+  // Function to handle button click
+  const handleClick = () => {
+    if (moduleStatus === TODO) {
+      // Redirect to the YouTube video
+      window.location.href = "https://youtu.be/qQLLDPAEzT0?si=15FwWU-iJ9MODwT5"; // Replace with your YouTube video URL
+    }
+    // Optionally handle the "Done" status here if needed
+  };
+
   return (
     <>
-      <div class="module-border">
-        <div class="module">
+      <div className="module-border">
+        <div className="module">
           <h2>{moduleName}</h2>
           <p>{moduleDescription}</p>
-          <button class="module-button">
-            {moduleStatus == DONE ? "Done" : "Begin"}
+          <button className="module-button" onClick={handleClick}>
+            {moduleStatus === DONE ? "Done" : "Begin"}
           </button>
         </div>
       </div>
