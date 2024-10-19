@@ -14,7 +14,7 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import CoursesPage from './pages/FinanceCoursesPage/CoursesPage';
 
 function App() {
-  const [isSignedIn, setIsSignedIn] = useState(true);
+  const [isSignedIn, setIsSignedIn] = useState(false);
   return (
     <>
       <Router>
