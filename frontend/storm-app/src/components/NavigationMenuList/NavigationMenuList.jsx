@@ -8,6 +8,11 @@ function NavigationMenuList({isOpen, setIsOpen, isSignedIn}) {
     const [showSignIn, setShowSignIn] = useState(false);
     const navigate = useNavigate();
 
+    const handleLandingPageClick = () => {
+        navigate('/');
+        setIsOpen(false);
+    }
+
     const handleSignInClick = () => {
         setShowSignIn(true);
     };
@@ -23,10 +28,12 @@ function NavigationMenuList({isOpen, setIsOpen, isSignedIn}) {
     }
 
 
+
+
     return(
         <>
             <ul className={`menuList ${isOpen ? 'visible' : ''}`}>
-                <li className="nav-item">Home</li>
+                <li className="nav-item" onClick={handleLandingPageClick}>Home</li>
                 <li className="nav-item">Resources</li>
                 {isSignedIn
                     ? <>
