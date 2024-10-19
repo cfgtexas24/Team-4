@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding/borders are included in width/height calculations */
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #23272a; /* Background color for the entire page */
+}
+
+.group-chat-container {
+  display: flex; /* Use flexbox */
+  height: 100vh; /* Full height of viewport */
+  width: 100vw; /* Full width of viewport */
+}
+
+.row {
+  height: 100%; /* Ensures the row takes full height */
+}
+
+.sidebar {
+  background-color: #2c2f33;
+  color: white;
+  padding: 15px;
+  width: 10%; /* Fixed width for sidebar */
+}
+
+.chat-area {
+  background-color: #23272a;
+  color: white;
+  padding: 15px;
+  display: flex; /* Flexbox for chat area */
+  flex-direction: column; /* Column layout for chat window and input */
+  height: 100%; /* Full height */
+}
+
+.chat-window {
+  flex-grow: 1; /* Allow chat window to fill remaining space */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 1px solid #ddd; /* Border for the chat window */
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.message {
+  margin: 5px 0; /* Margin between messages */
+  padding: 8px; /* Padding inside the message */
+  border-radius: 12px; /* Rounded corners */
+}
+
+.user-message {
+  background-color: #61dafb; /* User message background color */
+  text-align: right; /* Align text to the right */
+  margin-left: auto; /* Push the message to the right side */
+  margin-right: 10px; /* Space on the right */
+  padding: 10px; /* Padding for readability */
+  max-width: 70%; /* Limit the width of the message */
+}
+
+.bot-message {
+  background-color: #444; /* Bot message background color */
+  text-align: left; /* Align bot messages to the left */
+  margin-right: auto; /* Push the message to the left side */
+  margin-left: 10px; /* Space on the left */
+  padding: 10px; /* Padding for readability */
+  max-width: 70%; /* Limit the width of the message */
+}
+
+
+.input-form {
+  display: flex; /* Use flexbox for input form layout */
+  margin-top: 10px;
+  width: 100%; /* Full width for input form */
+}
+
+.input-form .form-control {
+  flex-grow: 1; /* Input field grows to fill space */
+  margin-right: 10px; /* Space between input and button */
+}
