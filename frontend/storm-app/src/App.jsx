@@ -8,11 +8,12 @@ import ChatPage from './pages/ChatPage/ChatPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 import MapPage from './pages/MapPage/MapPage';
+import FinanceCoursesPage from './pages/CoursesPage/FinanceCoursesPage';
 
 
 import './App.css';
 import LandingPage from './pages/LandingPage/LandingPage';
-import CoursesPage from './pages/FinanceCoursesPage/CoursesPage';
+import CoursesPage from './pages/CoursesPage/CoursesPage';
 
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -30,6 +31,7 @@ function App() {
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/map" element={<MapPage />} />
+          <Route path="/courses/finance" element={<FinanceCoursesPage />} />
         </Routes>
       </Router>       
     </>

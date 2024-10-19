@@ -17,7 +17,7 @@ function ChatInput({onSendMessage}) {
         <form onSubmit={handleSubmit} className='d-flex '>
             <input className='flex-grow-1 rounded' value={input}
         onChange={(e) => setInput(e.target.value)} placeholder="Type here..."/>
-            <button className='btn btn-success' type="submit">Send</button>
+            <button className='btn btn-success h-75' type="submit">Send</button>
         </form>
     )
 }

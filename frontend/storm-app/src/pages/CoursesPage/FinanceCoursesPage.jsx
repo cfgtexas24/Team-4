@@ -1,7 +1,7 @@
 import ModuleComponent from "../../components/ModuleComponent/ModuleComponent";
 import Path from "../../assets/path.png";
 
-import "./CoursesPage.css";
+import "./FinanceCoursesPage.css";
 
 // Same data used for finance application
 const FINANCE_APP = {
@@ -28,7 +28,7 @@ const FINANCE_APP = {
   ],
 };
 
-function CoursesPage() {
+function FinanceCoursesPage() {
   /***
    * Renders an individual module of a course
    */
@@ -42,10 +42,9 @@ function CoursesPage() {
   return (
     <>
       <img className="path" src={Path} />
-      <h1 className="path-header">{courseName}</h1>
       <div className="module-container">{modules.map(renderModule)}</div>
     </>
   );
 }
 
-export default CoursesPage;
+export default FinanceCoursesPage;

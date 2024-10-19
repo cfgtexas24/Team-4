@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/cfgtexas24/Team-4#readme",
   "dependencies": {
+    "@react-google-maps/api": "^2.20.3",
     "@talkjs/react": "^0.1.9",
     "axios": "^1.7.7",
     "talkjs": "^0.29.0"
