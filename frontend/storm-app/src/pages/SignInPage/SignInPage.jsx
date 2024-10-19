@@ -26,13 +26,13 @@ function SignInPage({
       };
 
       // Send login request to backend
-      // const response = await axios.post('http://127.0.0.1:5000/sign-in', payload);
+      const response = await axios.post('http://127.0.0.1:5000/sign-in', payload);
 
-      // if (response.status === 200) {
+      if (response.status === 200) {
         setIsSignedIn(true); // Set signed in state
         console.log('Login successful!');
         navigate('/dashboard'); // Redirect to dashboard
-      // }
+      }
     } catch (error) {
       console.error('Login failed:', error.response ? error.response.data : error.message);
       setErrorMessage('Invalid email or password.'); // Set error message
