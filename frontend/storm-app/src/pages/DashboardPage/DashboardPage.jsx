@@ -3,11 +3,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../index.css';
 
 function DashboardPage() {
+    let points = 1234;  //placeholder
+    let user = "Jeff";  //placeholder
     return (
         <>
-            <h1 className="text-dark d-flex justify-content-center">DASHBOARD</h1>
+            <h1 className="text-white d-flex justify-content-center dash-bg p-3 mb-5">DASHBOARD</h1>
+            <h3 className='d-flex justify-content-center'>{user}'s awards</h3>
             <div className='d-flex justify-content-center'>
-                <h3 className='p-3 mb-2 custom-bg-color text-white rounded-pill ' style={{ display: 'inline-block' }}>1234 pts</h3>
+                {/*<h3 className='p-3 mb-2 custom-bg-color text-white rounded ' style={{ display: 'inline-block' }}>1234</h3>*/}
+                <div class="alert alert-warning" role="alert">points: {points}</div>
             </div>
             {/* Shelves */}
             <div className="container mt-4">

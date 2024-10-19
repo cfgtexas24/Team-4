@@ -1,5 +1,5 @@
 .custom-bg-color {
-    background-color: #74eb34; /* Replace with your desired color */
+    background-color: #ffc715; /* Replace with your desired color */
 }
 
 .shelf-color{
@@ -14,4 +14,8 @@
 
 .landing-bg{
     background-color: #bdb82a;
+}
+
+.dash-bg{
+    background-color: #faa918;
 }
