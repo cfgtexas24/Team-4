@@ -3,12 +3,16 @@ import uuid
 from flask import Flask, render_template, redirect, url_for, request, jsonify
 from flask_uuid import FlaskUUID
 from firebase import db
+<<<<<<< HEAD
 from services.emergency_service import emergency_service
+=======
+>>>>>>> afc3941a2344740c8409ad484cf09d255c8dc799
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app) # enabling CORS for routes, needed for emergency alert
 FlaskUUID(app)
+CORS(app)
 # name, location, gender, age, phone, email, housing request
 
 # Landing Page (Redirects to /home)
@@ -19,7 +23,8 @@ def landing():
 # Home Page
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    return "home"
+    # return render_template('home.html')
 
 # Resources Page
 @app.route('/resources')
@@ -49,9 +54,6 @@ def sign_up():
         phone = data.get('phone')
         email = data.get('email')
         housing_request = data.get('housing_request')
-            
-        # Create a unique user ID (e.g., using the email as a document ID or generate a UUID)
-        user_id = email
             
         # Save to Firestore
         db.collection('users').document(user_id).set({
