@@ -6,6 +6,7 @@ import DashboardPage from './pages/DashboardPage/DashboardPage';
 import CommunityPage from './pages/CommunitiesPage/CommunityPage';
 import ChatPage from './pages/ChatPage/ChatPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavigationBar from './components/NavigationBar/NavigationBar';
 
 import './App.css';
 
@@ -13,7 +14,7 @@ function App() {
   return (
     <>
       <Router>
-      <NavigationBar />
+        <NavigationBar />
         <Routes>
           <Route path="/" element={<DashboardPage />} />
           <Route path="/sign-in" element={<SignInPage />} />
