@@ -1,0 +1,20 @@
+
+.module-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.path {
+    height: 200%;
+    margin: auto;
+    z-index: -1;
+    margin: 0% 50%;
+    position: absolute;
+}
+
+.class-header {
+    width: 100%;
+    background-color: deepskyblue;
+}
