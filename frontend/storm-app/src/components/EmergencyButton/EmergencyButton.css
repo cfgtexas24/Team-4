@@ -1,0 +1,39 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 0, 0, 0.5);  /* Changed to red with 50% opacity */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: #ffcccc;  /* Light red background */
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1001;
+    border: 2px solid red;  /* Added red border */
+}
+
+.modal-content {
+    text-align: center;
+    color: red;  /* Changed text color to red */
+}
+
+.confirm-button, .cancel-button {
+    margin: 10px;
+    padding: 5px 10px;
+    background-color: red;  /* Changed button background to red */
+    color: white;  /* Changed button text color to white for contrast */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.confirm-button:hover, .cancel-button:hover {
+    background-color: darkred;  /* Darker red on hover */
+}

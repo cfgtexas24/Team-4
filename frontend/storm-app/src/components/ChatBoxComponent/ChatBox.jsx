@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import "react-chat-elements/dist/main.css"
 import { MessageBox } from "react-chat-elements";
 
-function ChatBox(textMessage, sender) {
+function ChatBox(sender, textMessage) {
     if (sender.equals("You")) {
         position = "right";
     }

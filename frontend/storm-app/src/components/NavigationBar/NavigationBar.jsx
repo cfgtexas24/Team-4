@@ -5,18 +5,29 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './NavigationBar.css'
 import { useState } from 'react'
 import SignUpForm from '../SignUpForm/SignUpForm'
+import NavigationMenuList from '../NavigationMenuList/NavigationMenuList'
 
-function NavigationBar() {
+function NavigationBar({
+    isSignedIn,
+    setIsSignedIn
+}) {
     const [isOpen, setIsOpen] = useState(false);
-    const [showSignIn, setShowSignIn] = useState(false);
 
+    console.log(isSignedIn);
 
     const handleMenuToggle = () => {
         setIsOpen(!isOpen);
-    };
 
-    const handleSignInClick = () => {
-        setShowSignIn(true);
+        const menu = document.querySelector('.menuList');
+        const body = document.body;
+
+        if (menu.classsList.contains('visible')) {
+            menu.classList.remove('visible');
+            body.style.overflow = ''; // Allow scrolling
+        } else {
+            menu.classList.add('visible');
+            body.style.overflow = 'hidden'; // Prevent scrolling
+        }
     };
 
     return(
@@ -33,13 +44,8 @@ function NavigationBar() {
                 </div>
             </div>
             <div className={`menuBackground ${isOpen ? 'expanded' : ''}`}/>
-                <ul className={`menuList ${isOpen ? 'visible' : ''}`}>
-                    <li className="nav-item">Home</li>
-                    <li className="nav-item">Resources</li>
-                    <li className="nav-item" onClick={handleSignInClick}>Sign In</li>
-                </ul>
+                <NavigationMenuList isOpen={isOpen} setIsOpen={setIsOpen} isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />
             <div/>
-            {showSignIn && <SignUpForm />}
         </div>
         
     )
