@@ -10,7 +10,7 @@ The STORM Center for Hope and Service app is a resource hub designed to support 
 
 ## Acknowledgments
 
-Thanks to our mentors Xavier and Siva and the entire Chase team. 
+Thanks to our mentors Xavier, Siva, Huaxin, and Tom and the entire Chase team, including Jake.
 
 
 ## Technologies Used
