@@ -20,7 +20,6 @@ function NavigationMenuList({isOpen, setIsOpen, isSignedIn, setIsSignedIn}) {
     const handleSignInClick = () => {
         navigate('/sign-in');
         setIsOpen(false);
-        setIsSignedIn(true);
         
     };
 

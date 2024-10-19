@@ -5,6 +5,15 @@ import ChatStream from '../../components/ChatStreamComponent/ChatStream'
 import ChatInput from '../../components/ChatInputComponent/ChatInput'
 import './ChatPage.css'
 import { useState } from 'react';
+import { Session, Chatbox } from "@talkjs/react";
+
+// export default function ChatPage() {
+//   return (
+//     <Session appId="tzN4fSSV" userId="sample_user_alice">
+//       <Chatbox conversationId="sample_conversation" />
+//     </Session>
+//   );
+// }
 
 function ChatPage() {
     const [messages, setMessages] = useState([]);
