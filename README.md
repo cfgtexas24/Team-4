@@ -14,7 +14,7 @@ In this project, we aim to build a great resource for youth in difficult transit
 
 ## Acknowledgments
 
-Thanks to our mentors Xavier and the entire Chase team. 
+Thanks to our mentors Xavier and Siva and the entire Chase team. 
 
 ## References
 
