@@ -2,6 +2,10 @@ import { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import "./SignUpPage.css";
+import Logo from "../../assets/logo.webp"
+import fun from "../../assets/image.png"
+
+
 
 const FIRST_NAME = "firstName";
 const LAST_NAME = "lastName";
@@ -40,26 +44,18 @@ function SignUpPage() {
 
   async function handleSignUp() {
     const {
-      firstName,
-      lastName,
-      birthdayMonth,
-      birthdayDay,
-      birthdayYear,
-      userHandle,
-      userPassword,
-      needHousing,
-      wantMentor,
-      verificationCode,
+      firstName, lastName, birthdayMonth, birthdayDay,
+      birthdayYear, userHandle, userPassword, needHousing,
+      wantMentor, verificationCode
     } = userInfo;
 
-    // Construct the payload to match what your Flask API expects
     const payload = {
       name: `${firstName} ${lastName}`,
-      location: "N/A", // Adjust this if you have a location field
-      gender: "N/A", // Adjust if you collect gender info
+      location: "N/A",
+      gender: "N/A",
       age: `${birthdayMonth} ${birthdayDay}, ${birthdayYear}`,
-      phone: userHandle, // Change if this is meant for phone or email
-      email: userHandle, // Adjust as needed
+      phone: userHandle,
+      email: userHandle,
       housing_request: needHousing,
       mentor_request: wantMentor,
       verification_code: verificationCode,
@@ -67,170 +63,169 @@ function SignUpPage() {
     };
 
     try {
-    const response = await axios.post("http://127.0.0.1:5000/sign-up", payload, {
-        headers: {
-            'Content-Type': 'application/json',
-        }
+      const response = await axios.post("http://127.0.0.1:5000/sign-up", payload, {
+        headers: { 'Content-Type': 'application/json' },
       });
       console.log("Sign up successful:", response.data);
     } catch (error) {
       console.error("Error during sign up:", error.response ? error.response.data : error.message);
     }
-
   }
 
   return (
-    <Container className="sign-up-form">
-      <h2 className="text-center">Sign Up</h2>
-      <Form>
-        {/* Form fields remain unchanged */}
-        <Row>
-          <Col md={6}>
-            <Form.Group className="mb-3">
-              <Form.Label>First Name</Form.Label>
-              <Form.Control
-                type="text"
-                id={FIRST_NAME}
-                onChange={changeInput}
-                value={userInfo[FIRST_NAME]}
-                placeholder="Enter your first name"
-              />
-            </Form.Group>
-          </Col>
-          <Col md={6}>
-            <Form.Group className="mb-3">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                type="text"
-                id={LAST_NAME}
-                onChange={changeInput}
-                value={userInfo[LAST_NAME]}
-                placeholder="Enter your last name"
-              />
-            </Form.Group>
-          </Col>
-        </Row>
-
-        <Form.Group className="mb-3">
-          <Form.Label>Birthday</Form.Label>
-          <Row>
-            <Col md={4}>
-              <Form.Select
-                id={BIRTHDAY_MONTH}
-                onChange={changeInput}
-                value={userInfo[BIRTHDAY_MONTH]}
-              >
-                <option value="">Month</option>
-                <option>January</option>
-                <option>February</option>
-                <option>March</option>
-                <option>April</option>
-                <option>May</option>
-                <option>June</option>
-                <option>July</option>
-                <option>August</option>
-                <option>September</option>
-                <option>October</option>
-                <option>November</option>
-                <option>December</option>
-              </Form.Select>
-            </Col>
-            <Col md={4}>
-              <Form.Control
-                type="number"
-                id={BIRTHDAY_DAY}
-                onChange={changeInput}
-                value={userInfo[BIRTHDAY_DAY]}
-                placeholder="Day"
-                min="1"
-                max="31"
-              />
-            </Col>
-            <Col md={4}>
-              <Form.Control
-                type="number"
-                id={BIRTHDAY_YEAR}
-                onChange={changeInput}
-                value={userInfo[BIRTHDAY_YEAR]}
-                placeholder="Year"
-                min="1900"
-                max={new Date().getFullYear()}
-              />
-            </Col>
-          </Row>
-        </Form.Group>
-
-        <Form.Group className="mb-3">
-          <Form.Label>Phone Number</Form.Label>
-          <Form.Control
-            type="text"
-            id={PHONE_NUMBER}
-            onChange={changeInput}
-            value={userInfo[PHONE_NUMBER]}
-            placeholder="Enter phone number"
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3">
-          <Form.Label>Email Address</Form.Label>
-          <Form.Control
-            type="text"
-            id={USER_HANDLE}
-            onChange={changeInput}
-            value={userInfo[USER_HANDLE]}
-            placeholder="Enter email address"
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            id={USER_PASSWORD}
-            onChange={changeInput}
-            value={userInfo[USER_PASSWORD]}
-            placeholder="Enter a secure password"
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3">
-          <Form.Check
-            type="checkbox"
-            id={NEED_HOUSING}
-            label="I need housing"
-            onChange={changeInput}
-            checked={userInfo[NEED_HOUSING]}
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3">
-          <Form.Check
-            type="checkbox"
-            id={WANT_MENTOR}
-            label="I want a mentor"
-            onChange={changeInput}
-            checked={userInfo[WANT_MENTOR]}
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3">
-          <Form.Label>Verification Code</Form.Label>
-          <Form.Control
-            type="text"
-            id={VERIFICATION_CODE}
-            onChange={changeInput}
-            value={userInfo[VERIFICATION_CODE]}
-            placeholder="Enter your verification code"
-          />
-        </Form.Group>
-
-        <div className="d-grid gap-2">
-          <Button variant="primary" onClick={handleSignUp}>
-            Submit
-          </Button>
+    <div className="signup-main">
+      <div className="signup-left">
+        <div className="signup-left-content">
+        <img src={Logo} alt='Storm Logo'/>
+        <h1></h1>
+        <p></p>
+        <h2></h2>
+        <p></p>
+        <h3></h3>
+          <h1>Welcome to SignUp</h1>
+          <p>Please fill in your details</p>
+          <img src={fun} alt='Storm Logo' style={{ width: '300px', height: '300px' }} />
         </div>
-      </Form>
-    </Container>
+        
+      </div>
+      <div className="signup-right">
+        <Container className="signup-container">
+          <div className="signup-logo">
+          </div>
+          <h2>Create Your Account</h2>
+          <Form onSubmit={(e) => { e.preventDefault(); handleSignUp(); }}>
+            <Row className="mb-3">
+              <Col md={6}>
+                <Form.Group controlId={FIRST_NAME}>
+                  <Form.Control
+                    type="text"
+                    placeholder="First Name"
+                    value={userInfo[FIRST_NAME]}
+                    onChange={changeInput}
+                  />
+                </Form.Group>
+              </Col>
+              <Col md={6}>
+                <Form.Group controlId={LAST_NAME}>
+                  <Form.Control
+                    type="text"
+                    placeholder="Last Name"
+                    value={userInfo[LAST_NAME]}
+                    onChange={changeInput}
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
+
+            <Form.Group className="mb-3" controlId="birthday">
+              <Row>
+                <Col md={4}>
+                  <Form.Select
+                    id={BIRTHDAY_MONTH}
+                    value={userInfo[BIRTHDAY_MONTH]}
+                    onChange={changeInput}
+                  >
+                    <option value="">Month</option>
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>July</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+                  </Form.Select>
+                </Col>
+                <Col md={4}>
+                  <Form.Control
+                    type="number"
+                    id={BIRTHDAY_DAY}
+                    placeholder="Day"
+                    value={userInfo[BIRTHDAY_DAY]}
+                    onChange={changeInput}
+                    min="1"
+                    max="31"
+                  />
+                </Col>
+                <Col md={4}>
+                  <Form.Control
+                    type="number"
+                    id={BIRTHDAY_YEAR}
+                    placeholder="Year"
+                    value={userInfo[BIRTHDAY_YEAR]}
+                    onChange={changeInput}
+                    min="1900"
+                    max={new Date().getFullYear()}
+                  />
+                </Col>
+              </Row>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId={PHONE_NUMBER}>
+              <Form.Control
+                type="text"
+                placeholder="Phone Number"
+                value={userInfo[PHONE_NUMBER]}
+                onChange={changeInput}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId={USER_HANDLE}>
+              <Form.Control
+                type="text"
+                placeholder="Email"
+                value={userInfo[USER_HANDLE]}
+                onChange={changeInput}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId={USER_PASSWORD}>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                value={userInfo[USER_PASSWORD]}
+                onChange={changeInput}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId={NEED_HOUSING}>
+              <Form.Check
+                type="checkbox"
+                label="I need housing"
+                checked={userInfo[NEED_HOUSING]}
+                onChange={changeInput}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId={WANT_MENTOR}>
+              <Form.Check
+                type="checkbox"
+                label="I want a mentor"
+                checked={userInfo[WANT_MENTOR]}
+                onChange={changeInput}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId={VERIFICATION_CODE}>
+              <Form.Control
+                type="text"
+                placeholder="Verification Code"
+                value={userInfo[VERIFICATION_CODE]}
+                onChange={changeInput}
+              />
+            </Form.Group>
+
+            <Button type="submit" className="signup-submit">
+              Submit
+            </Button>
+          </Form>
+        </Container>
+      </div>
+    </div>
   );
 }
 
