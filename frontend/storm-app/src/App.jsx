@@ -12,7 +12,6 @@ import './App.css';
 import LandingPage from './pages/LandingPage/LandingPage';
 
 function App() {
-
   const [isSignedIn, setIsSignedIn] = useState(false);
 
   return (
