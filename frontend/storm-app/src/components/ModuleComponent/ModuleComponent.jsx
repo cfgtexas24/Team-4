@@ -14,7 +14,9 @@ function ModuleComponent(moduleInfo) {
         <div class="module">
           <h2>{moduleName}</h2>
           <p>{moduleDescription}</p>
-          <button class="module-button">
+          <button
+            class={"module-button " + (moduleStatus == DONE ? "done" : "todo")}
+          >
             {moduleStatus == DONE ? "Done" : "Begin"}
           </button>
         </div>

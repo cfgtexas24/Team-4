@@ -17,12 +17,18 @@ const FINANCE_APP = {
       name: "Fundamentals of Budgeting",
       description:
         "Learn how budgeting each month can put you ahead of the game and set you up to better achieve your financial goals.",
-      status: "done",
+      status: "todo",
     },
     {
       name: "Saving for Big Goals",
       description:
-        "Get to know how you can start saving up for big goals and your future",
+        "Get to know how you can start saving up for big goals and your future.",
+      status: "todo",
+    },
+    {
+      name: "Generational Wealth",
+      description:
+        "Building wealth for generations to come--how you can do it and why it matters.",
       status: "todo",
     },
   ],

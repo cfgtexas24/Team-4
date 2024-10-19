@@ -10,11 +10,13 @@ import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import CoursesPage from "./pages/FinanceCoursesPage/CoursesPage";
 
 import "./App.css";
+import FooterComponent from "./components/FooterComponent/FooterComponenet";
 
 function App() {
   return (
     <>
       <p>App</p>
+      <NavigationBar />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<DashboardPage />} />
@@ -26,6 +28,7 @@ function App() {
           <Route path="/course" element={<CoursesPage />}></Route>
         </Routes>
       </BrowserRouter>
+      <FooterComponent />
     </>
   );
 }

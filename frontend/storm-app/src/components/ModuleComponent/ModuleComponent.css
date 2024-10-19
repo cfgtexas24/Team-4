@@ -4,7 +4,7 @@
 
 .module-border {
     display: flex;
-    border: 3px solid rgb(5, 31, 44); 
+    border: 3px solid #2b70c9; 
     padding: 1%;
     width: 30%;
     border-radius: 10px;
@@ -16,14 +16,13 @@
     display: block;
     width: 100%;
     margin: auto;
-    background-color: rgb(5, 31, 44);
+    background-color: #2b70c9;
     color: white;
     border-radius: 10px;
     padding: 5%;
 }
 
 .module-button {
-    background-color: rgba(35,174,244);
     color: white;
     border: none;
     border: 2px solid white; 
@@ -37,4 +36,20 @@
     transition-duration: 1s;
     cursor: pointer;
     background-color: rgba(35,174,244, .8)
+}
+
+.done {
+    background-color: rgba(88, 204, 2);
+}
+.done:hover {
+    transition-duration: 1s; 
+    background-color: rgb(78, 179, 1);
+}
+
+.todo {
+    background-color: rgba(35,174,244);
+}
+.todo:hover {
+    background-color: rgba(32, 157, 219, 0.8);
+    transition-duration: 1s; 
 }

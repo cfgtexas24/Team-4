@@ -1,3 +1,7 @@
+* {
+    font-family: 'Roboto';
+}
+
 .custom-bg-color {
     background-color: #74eb34; /* Replace with your desired color */
 }
