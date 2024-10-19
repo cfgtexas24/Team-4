@@ -1,5 +1,6 @@
 import json
 from flask import Flask, render_template, redirect, url_for, request
+from firebase import db
 
 app = Flask(__name__)
 # name, location, gender, age, phone, email, housing request
@@ -31,9 +32,37 @@ def sign_in():
 @app.route('/sign-up', methods=['GET', 'POST'])
 def sign_up():
     if request.method == 'POST':
-        # Add logic for user creation
+        data = request.json
+    
+        # Extract user information
+        name = data.get('name')
+        location = data.get('location')
+        gender = data.get('gender')
+        age = data.get('age')
+        phone = data.get('phone')
+        email = data.get('email')
+        housing_request = data.get('housing_request')
+            
+        # Create a unique user ID (e.g., using the email as a document ID or generate a UUID)
+        user_id = email
+            
+        # Save to Firestore
+        db.collection('users').document(user_id).set({
+            'name': name,
+            'location': location,
+            'gender': gender,
+            'age': age,
+            'phone': phone,
+            'email': email,
+            'housing_request': housing_request
+        })
+
         return redirect(url_for('dashboard'))
+    
     return render_template('sign_up.html')
+    
+
+    
 
 # Mentor Page
 @app.route('/mentor')
