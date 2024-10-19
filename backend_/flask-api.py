@@ -1,8 +1,9 @@
 import json
 import uuid
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, redirect, url_for, request, jsonify
 from flask_uuid import FlaskUUID
 from firebase import db
+from services.emergency_service import emergency_service
 
 app = Flask(__name__)
 FlaskUUID(app)
@@ -97,6 +98,22 @@ def finance_course():
 @app.route('/dashboard')
 def dashboard():
     return render_template('dashboard.html')
+
+# Emergency Alert Route
+@app.route('/api/send-emergency-alert', methods=['POST'])
+def send_emergency_alert():
+    try:
+        data = request.json
+        message = data.get('message')
+        if not message:
+            return jsonify({"error": "Message is required"}), 400
+
+        result = emergency_service.send_emergency_alert(message)
+        app.logger.debug(f"Emergency alert result: {result}")
+        return jsonify({"message": "Emergency alert sent successfully"}), 200
+    except Exception as e:
+        app.logger.error(f"Error in emergency alert route: {str(e)}")
+        return jsonify({"error": "Failed to send emergency alert"}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
