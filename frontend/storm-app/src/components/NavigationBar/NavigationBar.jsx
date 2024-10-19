@@ -5,18 +5,16 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './NavigationBar.css'
 import { useState } from 'react'
 import SignUpForm from '../SignUpForm/SignUpForm'
+import NavigationMenuList from '../NavigationMenuList/NavigationMenuList'
 
 function NavigationBar() {
-    const [isOpen, setIsOpen] = useState(false);
-    const [showSignIn, setShowSignIn] = useState(false);
+    // to change
+    const isSignedIn = true;
 
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleMenuToggle = () => {
         setIsOpen(!isOpen);
-    };
-
-    const handleSignInClick = () => {
-        setShowSignIn(true);
     };
 
     return(
@@ -33,13 +31,8 @@ function NavigationBar() {
                 </div>
             </div>
             <div className={`menuBackground ${isOpen ? 'expanded' : ''}`}/>
-                <ul className={`menuList ${isOpen ? 'visible' : ''}`}>
-                    <li className="nav-item">Home</li>
-                    <li className="nav-item">Resources</li>
-                    <li className="nav-item" onClick={handleSignInClick}>Sign In</li>
-                </ul>
+                <NavigationMenuList isOpen={isOpen} isSignedIn={isSignedIn} />
             <div/>
-            {showSignIn && <SignUpForm />}
         </div>
         
     )

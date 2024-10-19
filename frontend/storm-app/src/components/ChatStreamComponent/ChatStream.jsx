@@ -4,7 +4,7 @@ import "react-chat-elements/dist/main.css"
 import { MessageList } from "react-chat-elements"
 
 function ChatStream() {
-    messages = [["You", "hi"], ["Mentor", "hello"], ["You", "how are you"], ["Mentor", "good"], ["You", "bye"]];
+    const messages = [["You", "hi"], ["Mentor", "hello"], ["You", "how are you"], ["Mentor", "good"], ["You", "bye"]];
     
     return(
         <MessageList
@@ -12,7 +12,7 @@ function ChatStream() {
             lockable={true}
             toBottomHeight={'100%'}
             dataSource={messages.map((message) => {
-                {position = "You" ? "right" : "left",
+                {position = message[0] === "You" ? "right" : "left",
                 type = "text",
                 title = message[0],
                 text = message[1]}
