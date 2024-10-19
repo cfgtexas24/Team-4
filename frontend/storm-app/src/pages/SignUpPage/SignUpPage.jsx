@@ -67,14 +67,14 @@ function SignUpPage() {
     };
 
     try {
-    const response = await axios.post("http://localhost:5173/sign-up", payload, {
+    const response = await axios.post("http://127.0.0.1:5000/sign-up", payload, {
         headers: {
             'Content-Type': 'application/json',
         }
       });
       console.log("Sign up successful:", response.data);
     } catch (error) {
-        console.error("Error during sign up:", error.response ? error.response.data : error.message);
+      console.error("Error during sign up:", error.response ? error.response.data : error.message);
     }
 
   }
