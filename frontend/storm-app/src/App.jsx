@@ -12,8 +12,9 @@ import CookingPage from './pages/CookingPage/CookingPage';
 import './App.css';
 import LandingPage from './pages/LandingPage/LandingPage';
 import CoursesPage from './pages/FinanceCoursesPage/CoursesPage';
+
 function App() {
-  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(true);
   return (
     <>
       <Router>

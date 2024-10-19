@@ -5,8 +5,6 @@ import "./SignUpPage.css";
 import Logo from "../../assets/logo.webp"
 import fun from "../../assets/image.png"
 
-
-
 const FIRST_NAME = "firstName";
 const LAST_NAME = "lastName";
 const BIRTHDAY_MONTH = "birthdayMonth";
