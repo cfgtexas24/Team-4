@@ -15,6 +15,17 @@ function NavigationBar() {
 
     const handleMenuToggle = () => {
         setIsOpen(!isOpen);
+
+        const menu = document.querySelector('.menuList');
+        const body = document.body;
+
+        if (menu.classList.contains('visible')) {
+            menu.classList.remove('visible');
+            body.style.overflow = ''; // Allow scrolling
+        } else {
+            menu.classList.add('visible');
+            body.style.overflow = 'hidden'; // Prevent scrolling
+        }
     };
 
     return(
@@ -31,7 +42,7 @@ function NavigationBar() {
                 </div>
             </div>
             <div className={`menuBackground ${isOpen ? 'expanded' : ''}`}/>
-                <NavigationMenuList isOpen={isOpen} isSignedIn={isSignedIn} />
+                <NavigationMenuList isOpen={isOpen} setIsOpen={setIsOpen} isSignedIn={isSignedIn} />
             <div/>
         </div>
         
