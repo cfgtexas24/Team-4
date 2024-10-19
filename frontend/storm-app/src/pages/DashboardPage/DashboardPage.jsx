@@ -4,6 +4,7 @@ import '../../index.css';
 
 function DashboardPage() {
     let points = 1234;  //placeholder
+    let streak = 5;  //placeholder
     let user = "Jeff";  //placeholder
     return (
         <>
@@ -11,7 +12,8 @@ function DashboardPage() {
             <h3 className='d-flex justify-content-center'>{user}'s awards</h3>
             <div className='d-flex justify-content-center'>
                 {/*<h3 className='p-3 mb-2 custom-bg-color text-white rounded ' style={{ display: 'inline-block' }}>1234</h3>*/}
-                <div class="alert alert-warning" role="alert">points: {points}</div>
+                <div class="alert alert-warning m-2" role="alert">points: {points}</div>
+                <div class="alert alert-warning m-2" role="alert">streak: {streak}</div>
             </div>
             {/* Shelves */}
             <div className="container mt-4">
