@@ -16,6 +16,7 @@ function App() {
     <>
       <Router>
         <NavigationBar />
+        <div className="main-content">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/sign-in" element={<SignInPage />} />
@@ -24,6 +25,7 @@ function App() {
           <Route path="/chat" element={<ChatPage />} />
            <Route path="/dashboard" element={<DashboardPage />} />
         </Routes>
+        </div>
       </Router>       
     </>
   )

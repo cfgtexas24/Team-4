@@ -19,3 +19,55 @@
 .dash-bg{
     background-color: #faa918;
 }
+
+.truncate-image {
+    height: 500px; /* Set the height you want to truncate at */
+    overflow: hidden; /* Hides the part of the image that exceeds the height */
+  }
+  
+.truncate-image img {
+    width: 100%; /* Ensures the image takes full width of the container */
+    object-fit: cover; /* Ensures the image is resized to fit the container while maintaining aspect ratio */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-y: auto;
+  }
+  
+  /* Add a container for the main content */
+  .main-content {
+    min-height: calc(100vh - 56px); /* Adjust height to consider the Navbar height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    
+    box-sizing: border-box; /* Include padding in height calculations */
+  }
+  
+  body {
+    background-color: white; /* Or any other desired color */
+  }
+  
+  
+  /* Optional: Style the scrollbar (works in Webkit browsers) */
+  ::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background of the scrollbar track */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar thumb on hover */
+  }
+
+.text-blue{
+    color: #2a497a;
+}

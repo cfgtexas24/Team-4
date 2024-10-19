@@ -1,3 +1,17 @@
+@font-face {
+    font-family: "Genera Light";
+    src: url("./fonts/GeneraAltLight-ALEGD.otf");
+}
+
+@font-face {
+    font-family: "Genera Bold";
+    src: url("./fonts/GeneraSemibold-qZmod.otf");
+}
+
+*{
+    font-family: "Genera Bold";
+}
+
 #root {
     overflow: hidden;
     width: 100vw;

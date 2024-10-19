@@ -4,9 +4,9 @@ import '../../index.css';
 import EmergencyButton from '../../components/EmergencyButton/EmergencyButton';
 
 function DashboardPage() {
-    let points = 1234;  //placeholder
+    let points = 3215;  //placeholder
     let streak = 5;  //placeholder
-    let user = "Jeff";  //placeholder
+    let user = "John";  //placeholder
     return (
         <>
             <h1 className="text-white d-flex justify-content-center dash-bg p-3 mb-5">DASHBOARD</h1>
