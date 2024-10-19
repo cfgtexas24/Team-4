@@ -14,7 +14,7 @@ dist-ssr
 *.local
 package.json
 package-lock.json
-npde_modules
+node_modules/
 
 # Editor directories and files
 .vscode/*
