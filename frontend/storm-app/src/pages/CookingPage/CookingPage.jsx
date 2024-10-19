@@ -59,7 +59,7 @@ const CookingPage = () => {
             ))}
           </div>
           <Form className="input-form">
-            <Form.Group controlId="messageInput" className="mb-0">
+            <Form.Group controlId="messageInput" className="mb-0" style={{ flexGrow: 1 }}>
               <Form.Control
                 type="text"
                 placeholder="Type a message..."
@@ -67,7 +67,7 @@ const CookingPage = () => {
                 onChange={(e) => setMessage(e.target.value)}
               />
             </Form.Group>
-            <Button onClick={handleSend}>Send</Button>
+            <Button onClick={handleSend} className="send-button">Send</Button>
           </Form>
         </Col>
       </Row>

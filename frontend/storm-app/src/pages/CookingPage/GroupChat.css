@@ -82,3 +82,9 @@ html, body {
   flex-grow: 1; /* Input field grows to fill space */
   margin-right: 10px; /* Space between input and button */
 }
+
+.input-form .send-button {
+  height: 75%; /* Match the height of the input field */
+  padding: 10px; /* Adjust padding to your preference */
+  flex-shrink: 0; /* Prevent shrinking */
+}
