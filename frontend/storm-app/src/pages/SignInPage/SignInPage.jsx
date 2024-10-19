@@ -72,6 +72,10 @@ function SignInPage() {
           </button>
         </form>
 
+        <div className="text-center mt-3">
+          Don't have an account? <a href="/sign-up">Sign up</a>
+        </div>
+
         {errorMessage && (
           <div className="alert alert-danger mt-3" role="alert">
             {errorMessage}
