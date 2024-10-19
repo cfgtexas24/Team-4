@@ -92,7 +92,7 @@ const MapPage = () => {
     return (
       <div className="loading">
         <div className="loading-spinner"></div>
-        <p>Loading the Library Finder...</p>
+        <p>Loading the Community Finder...</p>
       </div>
     );
   }
@@ -100,8 +100,8 @@ const MapPage = () => {
   return (
     <div className="map-container">
       <div className="header">
-        <h1>Library Finder</h1>
-        <p>Discover libraries near you and start your reading adventure!</p>
+        <h1>Community Finder</h1>
+        <p>Discover communities near you and start your learning adventure!</p>
       </div>
 
       <div className="map-wrapper">
