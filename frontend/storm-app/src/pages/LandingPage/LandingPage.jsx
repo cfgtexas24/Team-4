@@ -3,10 +3,12 @@ import NavigationBar from '../../components/NavigationBar/NavigationBar'
 
 function LandingPage() {
   return (
-    <div>
+    <>
+    <div className='landing-bg'>
         
-        <img src="../../src/assets/mainpic.png" className='width-max'/>
+        <img src="../../src/assets/mainpic.png" className="responsive-img"/>
     </div>
+    </>
   )
 }
 
