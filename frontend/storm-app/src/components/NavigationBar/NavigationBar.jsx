@@ -7,9 +7,13 @@ import { useState } from 'react'
 import SignUpForm from '../SignUpForm/SignUpForm'
 import NavigationMenuList from '../NavigationMenuList/NavigationMenuList'
 
-function NavigationBar() {
-    const [isSignedIn, setIsSignedIn] = useState(false);
+function NavigationBar({
+    isSignedIn,
+    setIsSignedIn
+}) {
     const [isOpen, setIsOpen] = useState(false);
+
+    console.log(isSignedIn);
 
     const handleMenuToggle = () => {
         setIsOpen(!isOpen);
@@ -17,7 +21,7 @@ function NavigationBar() {
         const menu = document.querySelector('.menuList');
         const body = document.body;
 
-        if (menu.classList.contains('visible')) {
+        if (menu.classsList.contains('visible')) {
             menu.classList.remove('visible');
             body.style.overflow = ''; // Allow scrolling
         } else {

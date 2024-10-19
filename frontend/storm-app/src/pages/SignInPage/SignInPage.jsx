@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios'; // Ensure axios is installed
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function SignInPage() {
+function SignInPage({
+  setIsSignedIn,
+}) {
   const [userHandle, setUserHandle] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(''); // State to store error message
@@ -27,6 +29,7 @@ function SignInPage() {
       const response = await axios.post('http://127.0.0.1:5000/sign-in', payload);
 
       if (response.status === 200) {
+        setIsSignedIn(true); // Set signed in state
         console.log('Login successful!');
         navigate('/dashboard'); // Redirect to dashboard
       }

@@ -21,6 +21,7 @@ function NavigationMenuList({isOpen, setIsOpen, isSignedIn, setIsSignedIn}) {
         navigate('/sign-in');
         setIsOpen(false);
         setIsSignedIn(true);
+        
     };
 
     const handleMentorChatClick = () => {
