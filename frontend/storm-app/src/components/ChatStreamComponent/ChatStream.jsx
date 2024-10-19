@@ -3,8 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import "react-chat-elements/dist/main.css"
 import { MessageList } from "react-chat-elements"
 
-function ChatStream() {
-    const messages = [["You", "hi"], ["Mentor", "hello"], ["You", "how are you"], ["Mentor", "good"], ["You", "bye"]];
+function ChatStream({messages}) {
+    if (messages === undefined) {
+        messages = [["You", "hi"], ["Mentor", "hello"], ["You", "how are you"], ["Mentor", "good"], ["You", "bye"]];
+    }
+
+    const oldmessages = [["You", "hi"], ["Mentor", "hello"], ["You", "how are you"], ["Mentor", "good"], ["You", "bye"]];
     
     return(
         <MessageList
