@@ -62,6 +62,7 @@ function NavigationMenuList({isOpen, setIsOpen, isSignedIn, setIsSignedIn}) {
             <ul className={`menuList ${isOpen ? 'visible' : ''}`}>
                 <li className="nav-item" onClick={handleLandingPageClick}>Home</li>
                 <a className="link nav-item" href="https://www.stormcohs.org/resources" target="_blank" rel="noopener noreferrer">Resources</a>
+
                 {isSignedIn
                     ? <>
                         <li className="nav-item" onClick={handleDashboardClick}>Dashboard</li>

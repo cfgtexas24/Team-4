@@ -27,9 +27,9 @@ function SignInPage({ setIsSignedIn }) {
       const response = await axios.post('http://127.0.0.1:5000/sign-in', payload);
 
       if (response.status === 200) {
-        setIsSignedIn(true); // Set signed in state
+        setIsSignedIn(true);
         console.log('Login successful!');
-        navigate('/dashboard'); // Redirect to dashboard
+        navigate('/dashboard');
       }
     } catch (error) {
       console.error('Login failed:', error.response ? error.response.data : error.message);

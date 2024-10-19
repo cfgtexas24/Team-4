@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 import MapPage from './pages/MapPage/MapPage';
 import FinanceCoursesPage from './pages/CoursesPage/FinanceCoursesPage';
-
+import CookingPage from './pages/CookingPage/CookingPage';
 
 import CookingPage from './pages/CookingPage/CookingPage';
 import './App.css';
