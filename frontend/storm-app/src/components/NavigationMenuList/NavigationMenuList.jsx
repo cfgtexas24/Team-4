@@ -5,7 +5,6 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 function NavigationMenuList({isOpen, setIsOpen, isSignedIn, setIsSignedIn}) {
-    const [showSignIn, setShowSignIn] = useState(false);
     const navigate = useNavigate();
 
     const handleLandingPageClick = () => {
@@ -20,7 +19,8 @@ function NavigationMenuList({isOpen, setIsOpen, isSignedIn, setIsSignedIn}) {
 
     const handleSignInClick = () => {
         navigate('/sign-in');
-        setShowSignIn(true);
+        setIsOpen(false);
+        setIsSignedIn(true);
     };
 
     const handleMentorChatClick = () => {
@@ -56,7 +56,6 @@ function NavigationMenuList({isOpen, setIsOpen, isSignedIn, setIsSignedIn}) {
                     : <li className="nav-item" onClick={handleSignInClick}>Sign In</li>
                 }
             </ul>
-            {showSignIn && <SignUpForm />}
         </>
     )
 }
