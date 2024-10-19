@@ -2,10 +2,11 @@ import React from 'react'
 import { Squash as Hamburger } from 'hamburger-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Logo from "../../assets/logo.webp"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function NavigationBar() {
     return(
-        <div className='navBar'>
+        <div className='navBar d-flex flex-row'>
             <div className='navBarProfile'>
                 <FontAwesomeIcon icon="fa-solid fa-user" />
             </div>
