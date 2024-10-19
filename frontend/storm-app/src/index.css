@@ -71,3 +71,25 @@ html, body {
 .text-blue{
     color: #2a497a;
 }
+.hero-section {
+    position: relative;
+    height: 500px;
+    background-color: #f4f4f4; /* You can change this to any color or add a background image */
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    
+  }
+  
+  .hero-text {
+    font-size: 28px; /* Adjust font size as needed */
+    text-align: center;
+    color: #2a497a; /* Change text color */
+    padding-bottom: 200px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  
+  .carousel-wrapper {
+    margin-top: 500px; /* Pushes the carousel down after the fixed hero section */
+  }

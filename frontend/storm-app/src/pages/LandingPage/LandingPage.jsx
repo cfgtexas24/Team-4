@@ -2,11 +2,31 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JS
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import { TypeAnimation } from 'react-type-animation';
 
 function LandingPage() {
+  const sequences = [
+    { text: '"Success is not final; failure is not fatal: It is the courage to continue that counts." —Winston Churchill', wait: 1500 },
+    { text: '“Don’t let yesterday take up too much of today.” —Will Rogers', wait: 1500 },
+    { text: '“Setting goals is the first step in turning the invisible into the visible.” —Tony Robbins', wait: 1500 },
+    { text: '“Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.” —Helen Keller', wait: 1500 }
+  ];
+
   return (
     <>
       <div>
+      <div className="Landing-Page hero-section" style={{ paddingLeft: '1em', paddingTop: '16em', flexDirection: 'column', alignItems: 'flex-top'}}>
+      <h1 className="hero-text">
+      <TypeAnimation
+            sequence={sequences.flatMap(({ text, wait }) => [text, wait])}
+            wrapper="span"
+            speed={50}
+            omitDeletionAnimation={true}
+            style={{ fontSize: '80px', display: 'inline-block' }}
+            repeat={Infinity}
+          />
+          </h1>
+          </div>
         <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
