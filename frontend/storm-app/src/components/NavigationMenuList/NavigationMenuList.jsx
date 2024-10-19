@@ -34,7 +34,8 @@ function NavigationMenuList({isOpen, setIsOpen, isSignedIn, setIsSignedIn}) {
     };
 
     const handleCoursesClick = () => {
-        navigate('/')
+        navigate('/courses')
+        setIsOpen(false);
     };
 
 
