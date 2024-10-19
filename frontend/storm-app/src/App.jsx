@@ -8,9 +8,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 import LandingPage from './pages/LandingPage/LandingPage';
+import NavigationBar from './components/NavigationBar/NavigationBar';
 
 function App() {
   return (
+    <>
+    <NavigationBar/>
     <Router>
       <Routes>
         {/* Public Routes */}
@@ -22,6 +25,7 @@ function App() {
         <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
     </Router>
+    </>
   );
 }
 
