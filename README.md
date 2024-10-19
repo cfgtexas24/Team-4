@@ -4,19 +4,22 @@
 
 ️**Project Description**
 
-In this project, we aim to build a great resource for youth in difficult transitions, provide them guidance for life skills, career preparation.
+The STORM Center for Hope and Service app is a resource hub designed to support youth experiencing difficult life transitions. The app aims to provide essential guidance in areas like life skills development, career preparation, financial management, and overall well-being. This project was built as part of Code For Good, an initiative to leverage technology for impactful change.
 
 ## Contact
-
-1. Mostaphe Mohamud - mohamudm@berea.edu
-2. Rinat R. Nailev - nailevr@berea.edu
-3. Krithika Subramanian - krithi.subra@gmail.com
 
 ## Acknowledgments
 
 Thanks to our mentors Xavier and Siva and the entire Chase team. 
 
+
+## Technologies Used
+React: Front-end framework for building the user interface.
+Bootstrap: CSS framework for styling and layout.
+Git: Version control for collaboration and code management.
+
 ## References
 
 We utilized the following sources:
 1. 
+

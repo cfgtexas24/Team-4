@@ -1,25 +1,27 @@
 import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+import SignInPage from './pages/SignInPage/SignInPage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
-import NavigationBar from './components/NavigationBar/NavigationBar';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Router components
 import DashboardPage from './pages/DashboardPage/DashboardPage';
+import CommunityPage from './pages/CommunitiesPage/CommunityPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import './App.css'
+import './App.css';
 
 function App() {
   return (
-    <>
-      <NavigationBar />
-      <p>App</p>       
-      <Router>
-        <Routes>
-          <Route path="/" element={<></>} />
-          <Route path="/dashboard" element={<DashboardPage/>} />
-        </Routes>
-      </Router>       
-    </>
-  )
+    <Router>
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/" element={<p>App</p>} />
+        <Route path="/sign-in" element={<SignInPage />} />
+        <Route path="/sign-up" element={<SignUpPage />} />
+        
+        {/* Dashboard Route */}
+        <Route path="/dashboard" element={<DashboardPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
