@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'; // Ensure axios is installed
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './SignIn.css'; // Use the same CSS as the SignUpPage
+import fun from "../../assets/image.png"
 
-function SignInPage({
-  setIsSignedIn
-}) {
+
+function SignInPage({ setIsSignedIn }) {
   const [userHandle, setUserHandle] = useState('');
   const [userPassword, setUserPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState(''); // State to store error message
+  const [errorMessage, setErrorMessage] = useState(''); 
   const navigate = useNavigate();
 
   function changeUserHandle(event) {
@@ -21,9 +21,7 @@ function SignInPage({
 
   async function checkCredentials() {
     try {
-      const payload = {
-        email: userHandle,
-      };
+      const payload = { email: userHandle };
 
       // Send login request to backend
       const response = await axios.post('http://127.0.0.1:5000/sign-in', payload);
@@ -35,55 +33,65 @@ function SignInPage({
       }
     } catch (error) {
       console.error('Login failed:', error.response ? error.response.data : error.message);
-      setErrorMessage('Invalid email or password.'); // Set error message
+      setErrorMessage('Invalid email or password.');
     }
   }
 
   return (
-    <div className="d-flex align-items-center justify-content-center vh-100">
-      <div className="card p-5" style={{ width: '400px' }}>
-        <h3 className="text-center mb-4">Sign In</h3>
-        <form>
-          <div className="form-group mb-3">
-            <label htmlFor="userHandle">Email</label>
-            <input
-              type="text"
-              id="userHandle"
-              className="form-control"
-              placeholder="Enter your email"
-              value={userHandle}
-              onChange={changeUserHandle}
-            />
-          </div>
-          <div className="form-group mb-4">
-            <label htmlFor="userPassword">Password</label>
-            <input
-              type="password"
-              id="userPassword"
-              className="form-control"
-              placeholder="Enter your password"
-              value={userPassword}
-              onChange={changeUserPassword}
-            />
-          </div>
-          <button
-            type="button"
-            className="btn btn-primary btn-block"
-            onClick={checkCredentials}
-          >
-            Submit
-          </button>
-        </form>
-
-        <div className="text-center mt-3">
-          Don't have an account? <a href="/sign-up">Sign up</a>
+    <div className="signup-main">
+      <div className="signup-left">
+        <div className="signup-left-content">
+          <h1>Welcome Back!</h1>
+          <p>Please enter your login details</p>
+          <img src={fun} alt='Storm Logo' style={{ width: '300px', height: '300px' }} />
         </div>
+      </div>
 
-        {errorMessage && (
-          <div className="alert alert-danger mt-3" role="alert">
-            {errorMessage}
+      <div className="signup-right">
+        <div className="signup-container">
+          <h2>Sign In</h2>
+          <form onSubmit={(e) => { e.preventDefault(); checkCredentials(); }}>
+            <div className="form-group mb-3">
+              <input
+                type="text"
+                id="userHandle"
+                className="form-control"
+                placeholder="Enter your email"
+                value={userHandle}
+                onChange={changeUserHandle}
+              />
+            </div>
+
+            <div className="form-group mb-3">
+              <input
+                type="password"
+                id="userPassword"
+                className="form-control"
+                placeholder="Enter your password"
+                value={userPassword}
+                onChange={changeUserPassword}
+              />
+            </div>
+
+            <button
+              type="button"
+              className="signup-submit"
+              onClick={checkCredentials}
+            >
+              Submit
+            </button>
+          </form>
+
+          <div className="text-center mt-3">
+            Don't have an account? <a href="/sign-up">Sign up</a>
           </div>
-        )}
+
+          {errorMessage && (
+            <div className="alert alert-danger mt-3" role="alert">
+              {errorMessage}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -22,7 +22,13 @@ const FINANCE_APP = {
     {
       name: "Saving for Big Goals",
       description:
-        "Get to know how you can start saving up for big goals and your future",
+        "Get to know how you can start saving up for big goals and your future.",
+      status: "todo",
+    },
+    {
+      name: "Generational Wealth",
+      description:
+        "Building wealth for generations to come--how you can do it and why it matters.",
       status: "todo",
     },
   ],
@@ -34,12 +40,8 @@ function FinanceCoursesPage() {
    */
   function renderModule(moduleInfo) {
     return <ModuleComponent moduleInfo={moduleInfo} />;
-  }
-
-  const courseName = FINANCE_APP.courseName;
-  const modules = FINANCE_APP.modules;
-
-  return (
+  }  const courseName = FINANCE_APP.courseName;
+  const modules = FINANCE_APP.modules;  return (
     <>
       <img className="path" src={Path} />
       <div className="module-container">{modules.map(renderModule)}</div>

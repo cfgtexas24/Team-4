@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignInPage from './pages/SignInPage/SignInPage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 import DashboardPage from './pages/DashboardPage/DashboardPage';
@@ -11,13 +11,13 @@ import MapPage from './pages/MapPage/MapPage';
 import FinanceCoursesPage from './pages/CoursesPage/FinanceCoursesPage';
 
 
+import CookingPage from './pages/CookingPage/CookingPage';
 import './App.css';
 import LandingPage from './pages/LandingPage/LandingPage';
 import CoursesPage from './pages/CoursesPage/CoursesPage';
 
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
-
   return (
     <>
       <Router>
@@ -32,10 +32,10 @@ function App() {
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/map" element={<MapPage />} />
           <Route path="/courses/finance" element={<FinanceCoursesPage />} />
+          <Route path="/community/cooking-community" element={<CookingPage />} />
         </Routes>
-      </Router>       
+      </Router>
     </>
   )
 }
-
 export default App;
