@@ -2,16 +2,18 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './NavigationMenuList.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function NavigationMenuList({isOpen, isSignedIn}) {
     const [showSignIn, setShowSignIn] = useState(false);
+    const navigate = useNavigate();
 
     const handleSignInClick = () => {
         setShowSignIn(true);
     };
 
     const handleMentorChatClick = () => {
-        
+        navigate('/chat');
     };
 
 

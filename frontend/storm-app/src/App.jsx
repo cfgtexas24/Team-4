@@ -12,8 +12,8 @@ import './App.css'
 function App() {
   return (
     <>
-      <NavigationBar />
       <Router>
+      <NavigationBar />
         <Routes>
           <Route path="/" element={<DashboardPage />} />
           <Route path="/community" element={<CommunityPage />} />
