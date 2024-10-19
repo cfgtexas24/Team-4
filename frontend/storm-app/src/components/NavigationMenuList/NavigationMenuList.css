@@ -50,6 +50,14 @@
 
 }
 
+.nav-item:hover {
+    transform: scale(1.1);
+}
+
+.nav-item:active {
+    transform: scale(.94);
+}
+
 .menuList.visible {
     display: block;
     animation: fadeIn 0.8s ease-in-out forwards; /* Apply fade-in animation */
@@ -58,4 +66,25 @@
 .nav-item {
     margin: 20px 0;
     cursor: pointer;
+}
+
+.link {
+    text-decoration: none;
+    color: #fff;
+
+    
+}
+
+a:hover, a:active {
+    text-decoration: none;
+    color: #fff;
+  }
+
+
+a:hover {
+    transform: scale(1.1);
+}
+
+a:active {
+    transform: scale(.94);
 }
