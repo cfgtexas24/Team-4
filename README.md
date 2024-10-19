@@ -1,6 +1,7 @@
 # Code For Good - STORM Center for Hope and Service
 
 ️**Author(s)**: Melissa, Hafsa, Sachi, Destiny, Raul, Krithi, Mostaphe
+️**Author(s)**: Melissa, Hafsa, Sachi, Krithika, Destiny, Raul, Mostaphe
 
 ️**Project Description**
 
@@ -19,3 +20,4 @@ Thanks to our mentors Xavier and Siva and the entire Chase team.
 
 We utilized the following sources:
 1. 
+
