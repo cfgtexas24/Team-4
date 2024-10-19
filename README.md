@@ -8,14 +8,9 @@ The STORM Center for Hope and Service app is a resource hub designed to support 
 
 ## Contact
 
-1. Mostaphe Mohamud - mohamudm@berea.edu
-2. Rinat R. Nailev - nailevr@berea.edu
-3. Krithika Subramanian - krithi.subra@gmail.com
-4. Hafsa Alaparmak - hafsaasude2@gmail.com
-
 ## Acknowledgments
 
-Thanks to our mentors Xavier and the entire Chase team. 
+Thanks to our mentors Xavier and Siva and the entire Chase team. 
 
 
 ## Technologies Used
@@ -27,3 +22,4 @@ Git: Version control for collaboration and code management.
 
 We utilized the following sources:
 1. 
+
