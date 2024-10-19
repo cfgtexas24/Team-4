@@ -27,7 +27,7 @@ const EmergencyButton = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message: 'Emergency alert: A user has reported being homeless and needs assistance.' }),
+        body: JSON.stringify({ message: 'Emergency alert: John Doe has reported being homeless and needs assistance. Please call them at: +1-234-567-8900' }),
       });
       
       console.log('Received response from server');
@@ -77,6 +77,7 @@ const EmergencyButton = () => {
     position: 'relative', // Add this line
   };
 
+
   return (
     <div>
       <button onClick={handleButtonClick} className="emergency-button" disabled={isLoading}>
@@ -85,7 +86,6 @@ const EmergencyButton = () => {
       {isModalOpen && (
         <div style={modalOverlayStyle}>
           <div style={modalStyle}>
-            <h2 style={{color: 'red'}}>Modal Content (Debug)</h2>
             <h2>Confirm Emergency</h2>
             <p>Are you homeless? Do you want to send an alert to the admin?</p>
             <button onClick={handleConfirm} disabled={isLoading} style={{marginRight: '10px'}}>
