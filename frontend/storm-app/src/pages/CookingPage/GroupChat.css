@@ -1,0 +1,67 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.group-chat-container {
+  height: 100vh; /* Full height of the viewport */
+  display: flex; /* Use flexbox for layout */
+}
+
+.sidebar {
+  background-color: #2c2f33;
+  color: white;
+  padding: 15px;
+  width: 20%; /* Fixed width for sidebar */
+}
+
+.chat-area {
+  background-color: #23272a;
+  color: white;
+  padding: 15px;
+  flex-grow: 1; /* Take up remaining space */
+}
+
+.chat-window {
+  height: calc(100% - 80px); /* Full height minus input form height */
+  overflow-y: auto; /* Enable scrolling */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.message {
+  margin: 5px 0;
+}
+
+.user {
+  text-align: right; /* Align user messages to the right */
+  color: #fff; /* Optional: Change color for user messages */
+}
+
+.bot {
+  text-align: left; /* Align bot messages to the left */
+  color: #fff; /* Optional: Change color for bot messages */
+}
+
+/* Optional: Add styles for message bubbles */
+.user-message, .bot-message {
+  display: inline-block;
+  padding: 8px;
+  border-radius: 12px;
+  max-width: 75%;
+}
+
+.user-message {
+  background-color: #61dafb; /* User message background */
+}
+
+.bot-message {
+  background-color: #444; /* Bot message background */
+}
+
+.input-form {
+  display: flex;
+  margin-top: 10px;
+}
