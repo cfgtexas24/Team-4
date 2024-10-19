@@ -4,7 +4,7 @@ import './NavigationMenuList.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-function NavigationMenuList({isOpen, isSignedIn}) {
+function NavigationMenuList({isOpen, setIsOpen, isSignedIn}) {
     const [showSignIn, setShowSignIn] = useState(false);
     const navigate = useNavigate();
 
@@ -14,7 +14,13 @@ function NavigationMenuList({isOpen, isSignedIn}) {
 
     const handleMentorChatClick = () => {
         navigate('/chat');
+        setIsOpen(false);
     };
+
+    const handleCommunitiesClick = () => {
+        navigate('/community');
+        setIsOpen(false)
+    }
 
 
     return(
@@ -25,7 +31,7 @@ function NavigationMenuList({isOpen, isSignedIn}) {
                 {isSignedIn
                     ? <>
                         <li className="nav-item" onClick={handleMentorChatClick}>Mentor Chat</li>
-                        <li className="nav-item">Communities</li>
+                        <li className="nav-item" onClick={handleCommunitiesClick}>Communities</li>
                         <li className="nav-item">Courses</li>
                         <li className="nav-item">Sign Out</li>
                     </>
