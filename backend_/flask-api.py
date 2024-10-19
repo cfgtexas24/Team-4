@@ -18,7 +18,8 @@ def landing():
 # Home Page
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    return "home"
+    # return render_template('home.html')
 
 # Resources Page
 @app.route('/resources')
