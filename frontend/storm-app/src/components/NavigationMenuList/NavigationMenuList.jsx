@@ -4,12 +4,24 @@ import './NavigationMenuList.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-function NavigationMenuList({isOpen, setIsOpen, isSignedIn}) {
-    const [showSignIn, setShowSignIn] = useState(false);
+function NavigationMenuList({isOpen, setIsOpen, isSignedIn, setIsSignedIn}) {
     const navigate = useNavigate();
 
+    const handleLandingPageClick = () => {
+        navigate('/');
+        setIsOpen(false);
+    }
+
+    const handleDashboardClick = () => {
+        navigate('/dashboard');
+        setIsOpen(false);
+    }
+
     const handleSignInClick = () => {
-        setShowSignIn(true);
+        navigate('/sign-in');
+        setIsOpen(false);
+        setIsSignedIn(true);
+        
     };
 
     const handleMentorChatClick = () => {
@@ -17,28 +29,34 @@ function NavigationMenuList({isOpen, setIsOpen, isSignedIn}) {
         setIsOpen(false);
     };
 
+    const handleSignOutClick = () => {
+        navigate('/');
+        setIsOpen(false)
+        setIsSignedIn(false);
+    }
+
     const handleCommunitiesClick = () => {
         navigate('/community');
-        setIsOpen(false)
-    }
+        setIsOpen(false);
+    };
 
 
     return(
         <>
             <ul className={`menuList ${isOpen ? 'visible' : ''}`}>
-                <li className="nav-item">Home</li>
+                <li className="nav-item" onClick={handleLandingPageClick}>Home</li>
                 <li className="nav-item">Resources</li>
                 {isSignedIn
                     ? <>
+                        <li className="nav-item" onClick={handleDashboardClick}>Dashboard</li>
                         <li className="nav-item" onClick={handleMentorChatClick}>Mentor Chat</li>
                         <li className="nav-item" onClick={handleCommunitiesClick}>Communities</li>
                         <li className="nav-item">Courses</li>
-                        <li className="nav-item">Sign Out</li>
+                        <li className="nav-item" onClick={handleSignOutClick}>Sign Out</li>
                     </>
                     : <li className="nav-item" onClick={handleSignInClick}>Sign In</li>
                 }
             </ul>
-            {showSignIn && <SignUpForm />}
         </>
     )
 }

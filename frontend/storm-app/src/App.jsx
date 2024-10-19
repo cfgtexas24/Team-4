@@ -12,17 +12,20 @@ import './App.css';
 import LandingPage from './pages/LandingPage/LandingPage';
 
 function App() {
+
+  const [isSignedIn, setIsSignedIn] = useState(false);
+
   return (
     <>
       <Router>
-        <NavigationBar />
+        <NavigationBar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn}/>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/sign-in" element={<SignInPage />} />
+          <Route path="/sign-in" element={<SignInPage setIsSignedIn={setIsSignedIn}/>} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/chat" element={<ChatPage />} />
-           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
         </Routes>
       </Router>       
     </>
