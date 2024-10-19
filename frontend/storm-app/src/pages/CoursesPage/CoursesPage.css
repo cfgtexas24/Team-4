@@ -1,20 +1,34 @@
-
-.module-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.path {
-    height: 200%;
-    margin: auto;
-    z-index: -1;
-    margin: 0% 50%;
+.course-list {
     position: absolute;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    width: 50rem;
 }
 
-.class-header {
-    width: 100%;
-    background-color: deepskyblue;
+.course-list-title {
+    font-size: 25px;
+    margin-bottom: 40px;
+
+}
+
+.course-item {
+    font-weight: bold;
+    font-size: 50px;
+    cursor: pointer;
+    margin-bottom: 1000px;
+}
+
+.cooking {
+    color: #ff4b4b;
+}
+
+.finance {
+    color: #2b70c9;
+}
+
+.driving {
+    color: #43c000;
 }

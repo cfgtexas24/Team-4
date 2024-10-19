@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Path from "../../assets/path.png";
+import "./CoursesPage.css";
 
 
 function CoursesPage() {
@@ -12,9 +13,10 @@ function CoursesPage() {
 
   return (
     <div className="course-list">
-      <div className="course-item">Cooking</div>
-      <div className="course-item" onClick={handleFinanceClick}>Finance</div>
-      <div className="course-item">Driving</div>
+      <div className="course-list-title">Select a topic to learn!</div>
+      <button className="course-item h1" type="button" class="btn btn-outline-primary btn-block">Cooking</button>
+      <button className="course-item h1" type="button" onClick={handleFinanceClick} class="btn btn-outline-success btn-block">Finance</button>
+      <button className="course-item h1" type="button" class="btn btn-outline-warning btn-block">Driving</button>
     </div>
   );
 }
