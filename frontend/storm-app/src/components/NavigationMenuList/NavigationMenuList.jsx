@@ -16,7 +16,7 @@ function NavigationMenuList({isOpen, setIsOpen, isSignedIn, setIsSignedIn}) {
         window.location.href = 'https://www.stormcohs.org/resources';
         setIsOpen(false);
     }
-
+    
     const handleDashboardClick = () => {
         navigate('/dashboard');
         setIsOpen(false);
@@ -36,6 +36,7 @@ function NavigationMenuList({isOpen, setIsOpen, isSignedIn, setIsSignedIn}) {
     const handleCoursesClick = () => {
         navigate('/')
     };
+
 
     const handleSignOutClick = () => {
         navigate('/');

@@ -4,7 +4,7 @@ import axios from 'axios'; // Ensure axios is installed
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function SignInPage({
-  setIsSignedIn,
+  setIsSignedIn
 }) {
   const [userHandle, setUserHandle] = useState('');
   const [userPassword, setUserPassword] = useState('');
