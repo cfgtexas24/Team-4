@@ -27,7 +27,7 @@ function CommunityPage() {
   // Cards data to avoid repetition
   const communities = [
     { name: 'Finance Community', image: financeImage, color: duolingoColors.pistachio, description: 'Engage in financial discussions, tips, and planning!' },
-    { name: 'Cooking Community', image: cookingImage, color: duolingoColors.chartreuse, description: 'Share recipes, cooking tips, and explore cuisines together!' },
+    { name: 'Cooking Community', image: cookingImage, color: duolingoColors.persianRed, description: 'Share recipes, cooking tips, and explore cuisines together!' },
     { name: 'Volunteering Community', image: volunteeringImage, color: duolingoColors.sun, description: 'Join volunteering efforts and make a difference together!' },
     { name: 'Art Community', image: artImage, color: duolingoColors.lightningYellow, description: 'Explore and share your creativity through art!' },
     { name: 'Health & Wellness Community', image: healthImage, color: duolingoColors.dodgerBlue, description: 'Discuss health tips, wellness practices, and stay fit together!' },
